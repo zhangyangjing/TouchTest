@@ -1,0 +1,106 @@
+    onInterceptTouchEvent, onTouchEvent默认都是返回false
+    public static final int ACTION_DOWN = 0;
+    public static final int ACTION_UP = 1;
+    public static final int ACTION_MOVE = 2;
+
+未做修改:
+    Activity dispatchTouchEvent:0
+    GroupOne dispatchTouchEvent:0
+    GroupOne onInterceptTouchEvent:0
+    GroupTwo dispatchTouchEvent:0
+    GroupTwo onInterceptTouchEvent:0
+    ViewOne dispatchTouchEvent:0
+    ViewOne onTouchEvent:0
+    GroupTwo onTouchEvent:0
+    GroupOne onTouchEvent:0
+    Activity onTouchEvent:0
+    Activity dispatchTouchEvent:2
+    Activity onTouchEvent:2
+    ......
+    Activity dispatchTouchEvent:2
+    Activity onTouchEvent:2
+    Activity dispatchTouchEvent:1
+    Activity onTouchEvent:1
+
+
+GroupTwo onInterceptTouchEvent return true:
+    Activity dispatchTouchEvent:0
+    GroupOne dispatchTouchEvent:0
+    GroupOne onInterceptTouchEvent:0
+    GroupTwo dispatchTouchEvent:0
+    GroupTwo onInterceptTouchEvent:0
+    GroupTwo onTouchEvent:0
+    GroupOne onTouchEvent:0
+    Activity onTouchEvent:0
+
+    Activity dispatchTouchEvent:2
+    Activity onTouchEvent:2
+    ......
+    Activity dispatchTouchEvent:2
+    Activity onTouchEvent:2
+
+    Activity dispatchTouchEvent:1
+    Activity onTouchEvent:1
+
+
+GroupTwo onTouchEvent return true:
+    Activity dispatchTouchEvent:0
+    GroupOne dispatchTouchEvent:0
+    GroupOne onInterceptTouchEvent:0
+    GroupTwo dispatchTouchEvent:0
+    GroupTwo onInterceptTouchEvent:0
+    ViewOne dispatchTouchEvent:0
+    ViewOne onTouchEvent:0
+    GroupTwo onTouchEvent:0
+
+    Activity dispatchTouchEvent:2
+    GroupOne dispatchTouchEvent:2
+    GroupOne onInterceptTouchEvent:2
+    GroupTwo dispatchTouchEvent:2
+    GroupTwo onTouchEvent:2
+    ......
+    Activity dispatchTouchEvent:2
+    GroupOne dispatchTouchEvent:2
+    GroupOne onInterceptTouchEvent:2
+    GroupTwo dispatchTouchEvent:2
+    GroupTwo onTouchEvent:2
+
+    Activity dispatchTouchEvent:1
+    GroupOne dispatchTouchEvent:1
+    GroupOne onInterceptTouchEvent:1
+    GroupTwo dispatchTouchEvent:1
+    GroupTwo onTouchEvent:1
+
+
+ViewOne onTouchEvent return true:
+    Activity dispatchTouchEvent:0
+    GroupOne dispatchTouchEvent:0
+    GroupOne onInterceptTouchEvent:0
+    GroupTwo dispatchTouchEvent:0
+    GroupTwo onInterceptTouchEvent:0
+    ViewOne dispatchTouchEvent:0
+    ViewOne onTouchEvent:0
+
+    Activity dispatchTouchEvent:2
+    GroupOne dispatchTouchEvent:2
+    GroupOne onInterceptTouchEvent:2
+    GroupTwo dispatchTouchEvent:2
+    GroupTwo onInterceptTouchEvent:2
+    ViewOne dispatchTouchEvent:2
+    ViewOne onTouchEvent:2
+    ......
+    Activity dispatchTouchEvent:2
+    GroupOne dispatchTouchEvent:2
+    GroupOne onInterceptTouchEvent:2
+    GroupTwo dispatchTouchEvent:2
+    GroupTwo onInterceptTouchEvent:2
+    ViewOne dispatchTouchEvent:2
+    ViewOne onTouchEvent:2
+
+    Activity dispatchTouchEvent:1
+    GroupOne dispatchTouchEvent:1
+    GroupOne onInterceptTouchEvent:1
+    GroupTwo dispatchTouchEvent:1
+    GroupTwo onInterceptTouchEvent:1
+    ViewOne dispatchTouchEvent:1
+    ViewOne onTouchEvent:1
